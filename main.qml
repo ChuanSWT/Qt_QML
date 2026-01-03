@@ -3,28 +3,44 @@ import QtQuick.Window 2.15
 
 Window {
     visible: true
-    width: 300
-    height: 200
-    title: "Task 7"
+    width: 400
+    height: 300
+    title: "Task 8"
 
     Rectangle {
         id: box
-        width: 100
-        height: 100
-        color: "steelblue"
-        anchors.centerIn: parent
-        scale: mouseArea.containsMouse ? 1.2 : 1.0
-        //what is that
-        Behavior on scale {
-            NumberAnimation {
-                duration: 100
+        width: 80
+        height: 80
+        color: "tomato"
+        x: 50
+        y: 110
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                box.state = box.state === "right" ? "" : "right"
             }
         }
-        //如果不加，则直接切换
-        MouseArea {
-            id: mouseArea
-            anchors.fill: parent
-            hoverEnabled: true
-        }
+
+        states: [
+            State {
+                name: "right"
+                PropertyChanges {
+                    target: box
+                    x: 270
+                }
+            }
+        ]
+
+        transitions: [
+            Transition {
+                from: "*"
+                to: "*"
+                NumberAnimation {
+                    properties: "x"
+                    duration: 300
+                }
+            }
+        ]
     }
 }
