@@ -19,9 +19,7 @@ Window {
             anchors.fill: parent
             //动画的状态源
             onClicked: {
-                //这个是什么->.state
-                //!
-                //应该就是下面那个States
+                //状态转换
                 box.state = box.state === "right" ? "" : "right"
             }
         }
