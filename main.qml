@@ -1,30 +1,30 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
-import QtQuick.Controls 2.15
 
 Window {
     visible: true
     width: 300
     height: 200
-    title: "Task 6"
-    color:is_active?"orange":"yellow"
-    property int count: 0
-    property bool is_active:false
-    Column {
+    title: "Task 7"
+
+    Rectangle {
+        id: box
+        width: 100
+        height: 100
+        color: "steelblue"
         anchors.centerIn: parent
-        spacing: 15
-
-        Text {
-            text: "Count: " + count
-            font.pixelSize: 20
-        }
-
-        Button {
-            text: "Click Me"
-            onClicked:{
-                count++
-                is_active = !is_active
+        scale: mouseArea.containsMouse ? 1.2 : 1.0
+        //what is that
+        Behavior on scale {
+            NumberAnimation {
+                duration: 100
             }
+        }
+        //如果不加，则直接切换
+        MouseArea {
+            id: mouseArea
+            anchors.fill: parent
+            hoverEnabled: true
         }
     }
 }
