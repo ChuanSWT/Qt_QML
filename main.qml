@@ -3,26 +3,27 @@ import QtQuick.Window 2.15
 
 Window {
     visible: true
-    width: 600
-    height: 400
-    title: "Task 4"
-
-
-
+    width: 300
+    height: 200
+    title: "Task 5"
+    property bool is_active: false
     Rectangle {
-        id: leftPanel
-        anchors.left: parent.left
-        anchors.right:rightPanel.left
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        color: "gray"
-    }
-    Rectangle {
-        id: rightPanel
-        width: 200
-        anchors.right: parent.right
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        color: "#2c3e50"
+        anchors.fill: parent
+
+        color: is_active ? "tomato" : "steelblue"
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                is_active = !is_active
+            }
+        }
+
+        Text {
+            anchors.centerIn: parent
+            text: is_active ? "ON" : "OFF"
+            color: "white"
+            font.pixelSize: 24
+        }
     }
 }
