@@ -1,42 +1,29 @@
 import QtQuick 2.15
 import QtQuick.Window 2.15
+import QtQuick.Controls 2.15
+
 
 Window {
     visible: true
     width: 400
-    height: 300
-    title: "Task 2"
+    height: 200
+    title: "Task 3"
 
-    Rectangle {
-        anchors.fill: parent
-        color: "lightgray"
+    Row {
+        anchors.centerIn: parent
+        spacing:20
 
-        Rectangle{
-            width:100
-            height:100
-            color:"red"
-            x:100
-            y:200
-            radius:10
+        Button {
+            id:button1;
+            text: "Button 1"
         }
-
-        Rectangle {
-            width: 100
-            height: 100
-            color: "green"
-            x: 120
-            y: 80
-            z: 2
-            radius:50
+        Button {
+            id:button2;
+            text: "Button 2"
         }
-
-        Rectangle {
-            width: 100
-            height: 100
-            color: "blue"
-            x: 90
-            y: 120
-            z: 1    // 盖在最上面
+        Button {
+            id:button3;
+            text: "Button 3"
         }
     }
 }
