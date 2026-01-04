@@ -29,6 +29,7 @@ Window {
             height: 50
             color:ListView.isCurrentItem ? list_color : myMouseArea.containsMouse?"steelblue":"#ecf0f1"
             //为什么不起作用？
+            //原来要用ColorAnimation
             Behavior on color{
                 ColorAnimation{
                     duration:200
