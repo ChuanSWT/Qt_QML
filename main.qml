@@ -27,7 +27,13 @@ Window {
         delegate: Rectangle {
             width: parent.width
             height: 50
-            color: ListView.isCurrentItem ? list_color : "#ecf0f1"
+            color:ListView.isCurrentItem ? list_color : myMouseArea.containsMouse?"steelblue":"#ecf0f1"
+            //为什么不起作用？
+            Behavior on color{
+                ColorAnimation{
+                    duration:200
+                }
+            }
 
             Text {
                 anchors.centerIn: parent
@@ -36,8 +42,9 @@ Window {
                 //因为不在delegate根下
                 color: myListView.currentIndex == index? "white" : "black"
             }
-
             MouseArea {
+                id:myMouseArea
+                hoverEnabled: true
                 anchors.fill: parent
                 //状态源
                 onClicked: {
