@@ -11,12 +11,15 @@ Rectangle {
     //参数链接
     property string title: ""
     property string value: ""
+    //向外暴露名称，和内部数据连接
+    property alias titleColor: titleText.color
 
     Column {
         anchors.centerIn: parent
         spacing: 6
 
         Text {
+            id: titleText
             text: root.title
             font.pixelSize: 14
             color: "#666666"

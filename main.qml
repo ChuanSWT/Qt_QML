@@ -16,6 +16,7 @@ Window {
             //参数链接
             title: "CPU"
             value: "32%"
+            titleColor: "green"
         }
 
         Card {
