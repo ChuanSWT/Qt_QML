@@ -10,11 +10,11 @@ Window {
     //“数据容器”
     ListModel {
         id: myModel
-        ListElement { name: "Apple" }
-        ListElement { name: "Banana" }
-        ListElement { name: "Orange" }
-        ListElement { name: "Grape" }
-        ListElement { name: "Peach" }
+        ListElement { name: "Apple";list_color:"#4CAF50"}
+        ListElement { name: "Banana";list_color:"#FBC02D" }
+        ListElement { name: "Orange";list_color:"#FB8C00" }
+        ListElement { name: "Grape" ;list_color:"#8E24AA"}
+        ListElement { name: "Peach" ;list_color:"#FFB7A5"}
     }
 
     //“数据显示器”
@@ -27,7 +27,7 @@ Window {
         delegate: Rectangle {
             width: parent.width
             height: 50
-            color: ListView.isCurrentItem ? "#3498db" : "#ecf0f1"
+            color: ListView.isCurrentItem ? list_color : "#ecf0f1"
 
             Text {
                 anchors.centerIn: parent
