@@ -3,9 +3,11 @@
         <file>main.qml</file>
     </qresource>
     <qresource prefix="/components">
-        <file>Card.qml</file>
+        <file>MenuButton.qml</file>
     </qresource>
     <qresource prefix="/pages">
-        <file>test2.qml</file>
+        <file>HomePage.qml</file>
+        <file>SettingPage.qml</file>
+        <file>AboutPage.qml</file>
     </qresource>
 </RCC>
